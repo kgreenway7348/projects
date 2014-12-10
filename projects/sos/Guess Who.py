@@ -1,12 +1,12 @@
 import picamera,time
 
-def getPicture(name):
+def getPicture(name): #This function gets the photo of the person.
     try:
         with picamera.PiCamera() as camera:
-            camera.resolution = (1024,728)
+            camera.resolution = (1024,728)# The resoloution
             check = False
             while check == False:
-                    camera.start_preview()
+                    camera.start_preview()# When the person is not happy with the photo it will take it again.
                     filename=name+".jpeg"
                     camera.capture(filename)
                     time.sleep(2)
@@ -15,13 +15,13 @@ def getPicture(name):
                         
                        check = True
 
-    except picamera.exc.PiCameraValueError:
+    except picamera.exc.PiCameraValueError:#Instead of crashing when the camera is unplugged it will give a user friendly message.
         print("The camera is unplugged")
         filename=""
 
     return filename
 
-def getChatProfile():
+def getChatProfile():#This organizes their profile.
     name = ""
     while name == "":
         print("What is your name?")
