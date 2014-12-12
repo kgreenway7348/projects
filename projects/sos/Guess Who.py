@@ -1,4 +1,4 @@
-import picamera,time
+import picamera,time,json
 
 def getPicture(name): #This function gets the photo of the person.
     try:
@@ -22,17 +22,38 @@ def getPicture(name): #This function gets the photo of the person.
     return filename
 
 def getChatProfile():#This organizes their profile.
-    name = ""
+    name == ""
     while name == "":
         print("What is your name?")
 
-    glasses =""
+    glasses == ""
     while glasses == "":
         print("Do you wear glasses?")
 
-    haircolour =""
-    while haircolour ==("brown","blonde","black","red"):
+    haircolour == ""
+    while haircolour == ("brown","blonde","black","red"):
         print("OK")
+    while haircolour == "":
+        print("Give a proper haircolour")
+
+    gender == ""
+    while gender == "":
+        print ("What is your gender?")
+
+    hat == ""
+    while hat == "":
+        print ("Do you where a hat")
+    while hat != ("Yes","No","Y","N",):
+        print ("Please give a proper answer")
+
+    eyecolour == ""
+    while eyecolour == "":
+        print("What is your eye colour?")
+
+
+
+    
+               
 
 
     def saveProfile():
@@ -41,4 +62,10 @@ def getChatProfile():#This organizes their profile.
     for item in profile:
         my_file.write(item+",")
     my_file.write("\b\n")    
-    
+
+def loadProfile():
+    try:
+        with open("profiles.txt"mode="r" as p:
+                  profiles = json.load(p)
+    except IOError:
+                  print("IO ERROR ALERT,CREATE PROFILE"))
