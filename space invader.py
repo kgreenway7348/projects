@@ -8,7 +8,7 @@ y = pos.y
 z = pos.z
 
 mc.setBlock(x+2,y+8,z,35,6)#This part is the ears of the Invader.
-mc.setBlock(x+8,y+8,z,35,6)
+mc.setBlock(x+8,y+8,z,35,6)# Everything  is pink.
 mc.setBlock(x+3,y+7,z,35,6)
 mc.setBlock(x+7,y+7,z,35,6)
 mc.setBlocks(x+2,y+6,z,x+8,y+6,z,35,6)#This is the main body including the eyes.
@@ -22,8 +22,8 @@ mc.setBlock(x+10,y+3,z,35,6)#The feet of the invader.
 mc.setBlock(x+2,y+1,z,35,5)
 mc.setBlock(x+2,y+2,z,35,6)
 mc.setBlock(x+8,y+2,z,35,6)
-mc.setBlock(x+10,y+2,z,35,6)
+mc.setBlock(x+10,y+2,z,35,6)# Error line, I have no idea why...
 mc.setBlock(x+3,y+1,z,35,6)
 mc.setBlock(x+4,y+1,z,35,6)
 mc.setBlock(x+6,y+1,z,35,6)
-mc.setBlock(x+7,y+1,z,35,6)
+mc.setBlock(x+7,y+1,z,35,6)#Last line
