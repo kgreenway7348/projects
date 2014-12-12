@@ -21,7 +21,7 @@ def getPicture(name): #This function gets the photo of the person.
 
     return filename
 
-def getChatProfile():#This organizes their profile.
+def getChatProfile():#This organizes their profile and it gets the information.
     name == ""
     while name == "":
         print("What is your name?")
@@ -31,7 +31,7 @@ def getChatProfile():#This organizes their profile.
         print("Do you wear glasses?")
 
     haircolour == ""
-    while haircolour == ("brown","blonde","black","red"):
+    while haircolour == ("brown","blonde","black","red"):# I will add more stuff onto this.
         print("OK")
     while haircolour == "":
         print("Give a proper haircolour")
@@ -44,7 +44,7 @@ def getChatProfile():#This organizes their profile.
     while hat == "":
         print ("Do you where a hat")
     while hat != ("Yes","No","Y","N",):
-        print ("Please give a proper answer")
+        print ("Please give a proper answer")# To avoid stupid peoplegiving stupid answers.
 
     eyecolour == ""
     while eyecolour == "":
@@ -56,7 +56,7 @@ def getChatProfile():#This organizes their profile.
                
 
 
-    def saveProfile():
+    def saveProfile(): #This organizes and stores.
         profile = getProfile()
         with open("profile.txt"),mode == "a",encoding == ("utf-8") as my_file
     for item in profile:
@@ -68,4 +68,4 @@ def loadProfile():
         with open("profiles.txt"mode="r" as p:
                   profiles = json.load(p)
     except IOError:
-                  print("IO ERROR ALERT,CREATE PROFILE"))
+                  print("IO ERROR ALERT,CREATE PROFILE") # This is to stop it crashing and is more user freindly.
