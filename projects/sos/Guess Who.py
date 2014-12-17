@@ -1,6 +1,6 @@
 import picamera,time,json
 
-def getPicture(name): #This function gets the photo of the person.
+def getPicture(n): #This function gets the photo of the person.
     try:
         with picamera.PiCamera() as camera:
             camera.resolution = (1024,728)# The resoloution
@@ -12,8 +12,11 @@ def getPicture(name): #This function gets the photo of the person.
                     time.sleep(2)
                     camera.stop_preview()
                     if input("Is this picture okay. Y/N") == "Y":
+                        check = True
+                   
+                                
                         
-                       check = True
+                   
 
     except picamera.exc.PiCameraValueError:#Instead of crashing when the camera is unplugged it will give a user friendly message.
         print("The camera is unplugged")
@@ -21,51 +24,50 @@ def getPicture(name): #This function gets the photo of the person.
 
     return filename
 
-def getChatProfile():#This organizes their profile and it gets the information.
-    name == ""
-    while name == "":
-        print("What is your name?")
-
-    glasses == ""
-    while glasses == "":
-        print("Do you wear glasses?")
-
-    haircolour == ""
-    while haircolour == ("brown","blonde","black","red"):# I will add more stuff onto this.
-        print("OK")
-    while haircolour == "":
-        print("Give a proper haircolour")
-
-    gender == ""
-    while gender == "":
-        print ("What is your gender?")
-
-    hat == ""
-    while hat == "":
-        print ("Do you where a hat")
-    while hat != ("Yes","No","Y","N",):
-        print ("Please give a proper answer")# To avoid stupid peoplegiving stupid answers.
-
-    eyecolour == ""
-    while eyecolour == "":
-        print("What is your eye colour?")
 
 
+def getInfoProfile():#This organizes their profile and it gets the information.
+        (eyecolour) = ""
+        while (eyecolour) == "":
+            (eyecolour) =input("What is your eye colour?")
 
-    
-               
+        (name) = ""
+        while (name) =="":
+            (name) =input("What is your name?")
 
+        (hat) = ""
+        while (hat) == "":
+            (hat) =input("Do you wear a hat?")
 
-    def saveProfile(): #This organizes and stores.
+        (haircolour) = ""
+        while (haircolour) == "":
+            (haircolour) =input("What is your haircolour?")
+
+        (gender) = ""
+        while (gender) == "":
+            (gender) =input("What is your gender?")
+
+        (facial hair) = ""
+        while (facial hair) == "":
+            (facial hair) =input("Do you have facial hair?")
+
+            
+
+            
+        
+
+def saveProfile(): #This organizes and stores.
         profile = getProfile()
-        with open("profile.txt"),mode == "a",encoding == ("utf-8") as my_file
-    for item in profile:
-        my_file.write(item+",")
-    my_file.write("\b\n")    
+        with open("profile.txt",mode = "a",encoding = "utf-8") as my_file:
+            for item in profile:
+                my_file.write(item+",")
+                my_file.write("\b\n")
+                
 
 def loadProfile():
     try:
-        with open("profiles.txt"mode="r" as p:
+        with open("profiles.txt",mode = "w") as p:
                   profiles = json.load(p)
     except IOError:
-                  print("IO ERROR ALERT,CREATE PROFILE") # This is to stop it crashing and is more user freindly.
+                  print("IO ERROR ALERT,CREATE PROFILE")#This is to stop it crashing and is more user freindly.
+                  
